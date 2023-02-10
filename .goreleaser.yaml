@@ -13,7 +13,8 @@ builds:
       - darwin
 dockers:
   - image_templates:
-    - akath19/dtrack-auditor-go
+    - "akath19/dtrack-auditor-go:latest"
+    - "akath19/dtrack-auditor-go:{{ .Tag }}"
 archives:
   - format: tar.gz
     name_template: >-
