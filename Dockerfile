@@ -1,3 +1,3 @@
 FROM scratch
-ENTRYPOINT [ "/app" ]
-COPY app /
+ENTRYPOINT [ "/dtrack-auditor-go" ]
+COPY dtrack-auditor-go /
