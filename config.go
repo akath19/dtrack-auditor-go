@@ -8,6 +8,8 @@ import (
 )
 
 func validateConfig() *Config {
+	var timeout, critical, high, medium, low, unassigned int
+
 	apiUrl, err := getEnvVar("API_URL")
 
 	if err != nil {
@@ -23,13 +25,13 @@ func validateConfig() *Config {
 	timeoutEnv, err := getEnvVar("API_TIMEOUT")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		timeout = 30
+	} else {
+		timeout, err = strconv.Atoi(timeoutEnv)
 
-	timeout, err := strconv.Atoi(timeoutEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing timeout variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing timeout variable: %s", err)
+		}
 	}
 
 	projectName, err := getEnvVar("PROJECT_NAME")
@@ -67,61 +69,61 @@ func validateConfig() *Config {
 	criticalEnv, err := getEnvVar("CRITICAL_THRESHOLD")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		critical = 0
+	} else {
+		critical, err = strconv.Atoi(criticalEnv)
 
-	critical, err := strconv.Atoi(criticalEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing critical threshold variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing critical threshold variable: %s", err)
+		}
 	}
 
 	highEnv, err := getEnvVar("HIGH_THRESHOLD")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		high = 0
+	} else {
+		high, err = strconv.Atoi(highEnv)
 
-	high, err := strconv.Atoi(highEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing high threshold variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing high threshold variable: %s", err)
+		}
 	}
 
 	mediumEnv, err := getEnvVar("MEDIUM_THRESHOLD")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		medium = 0
+	} else {
+		medium, err = strconv.Atoi(mediumEnv)
 
-	medium, err := strconv.Atoi(mediumEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing medium threshold variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing medium threshold variable: %s", err)
+		}
 	}
 
 	lowEnv, err := getEnvVar("LOW_THRESHOLD")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		low = 0
+	} else {
+		low, err = strconv.Atoi(lowEnv)
 
-	low, err := strconv.Atoi(lowEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing low threshold variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing low threshold variable: %s", err)
+		}
 	}
 
 	unassignedEnv, err := getEnvVar("UNASSIGNED_THRESHOLD")
 
 	if err != nil {
-		log.Fatalf("%s", err)
-	}
+		unassigned = 0
+	} else {
+		unassigned, err = strconv.Atoi(unassignedEnv)
 
-	unassigned, err := strconv.Atoi(unassignedEnv)
-
-	if err != nil {
-		log.Fatalf("Error parsing unassigned threshold variable: %s", err)
+		if err != nil {
+			log.Fatalf("Error parsing unassigned threshold variable: %s", err)
+		}
 	}
 
 	return &Config{

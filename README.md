@@ -23,16 +23,16 @@ dtrack-auditor-go is configured via environment variables:
 
 * `API_URL`: Base URL of dependency-track to connect to.
 * `API_TOKEN`: Token used for authentication.
-* `API_TIMEOUT`: Timeout in seconds to use for API calls.
+* `API_TIMEOUT`: Timeout in seconds to use for API calls, defaults to 30
 * `PROJECT_NAME`: Name of the project to find or create if `autocreate` is enabled.
 * `PROJECT_VERSION`: Version of the project to find or create if `autocreate` is enabled.
 * `PROJECT_AUTOCREATE`: Toggle to automatically create the project in dependency-track if it does not exist, token must have `PORTFOLIO_MANAGEMENT` or `PROJECT_CREATION_UPLOAD` permissions to create the project successfully.
 * `BOM_PATH`: Relative path to the BOM file to analyze.
-* `CRITICAL_THRESHOLD`: Numeric threshold of CRITICAL vulnerabilities (inclusive), setting to `0` ignores the threshold entirely.
-* `HIGH_THRESHOLD`: Numeric threshold of HIGH vulnerabilities (inclusive), setting to `0` ignores the threshold entirely.
-* `MEDIUM_THRESHOLD`: Numeric threshold of MEDIUM vulnerabilities (inclusive), setting to `0` ignores the threshold entirely.
-* `LOW_THRESHOLD`: Numeric threshold of LOW vulnerabilities (inclusive), setting to `0` ignores the threshold entirely.
-* `UNASSIGNED_THRESHOLD`: Numeric threshold of UNASSIGNED vulnerabilities (inclusive), setting to `0` ignores the threshold entirely.
+* `CRITICAL_THRESHOLD`: Numeric threshold of CRITICAL vulnerabilities (inclusive), setting to `0` ignores the threshold entirely, defaults to `0`.
+* `HIGH_THRESHOLD`: Numeric threshold of HIGH vulnerabilities (inclusive), setting to `0` ignores the threshold entirely, defaults to `0`.
+* `MEDIUM_THRESHOLD`: Numeric threshold of MEDIUM vulnerabilities (inclusive), setting to `0` ignores the threshold entirely, defaults to `0`.
+* `LOW_THRESHOLD`: Numeric threshold of LOW vulnerabilities (inclusive), setting to `0` ignores the threshold entirely, defaults to `0`.
+* `UNASSIGNED_THRESHOLD`: Numeric threshold of UNASSIGNED vulnerabilities (inclusive), setting to `0` ignores the threshold entirely, defaults to `0`.
 
 ## Upcoming Features
 

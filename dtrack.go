@@ -12,7 +12,7 @@ import (
 )
 
 func createDtrackClient(config *Config) (*dtrack.Client, error) {
-	return dtrack.NewClient(config.Api.Url, dtrack.WithAPIKey(config.Api.Token), dtrack.WithTimeout(time.Duration(config.Api.Timeout)))
+	return dtrack.NewClient(config.Api.Url, dtrack.WithAPIKey(config.Api.Token), dtrack.WithTimeout(time.Duration(config.Api.Timeout)*time.Second))
 }
 
 func getProjectInfo(config *Config, client *dtrack.Client) (dtrack.Project, error) {
