@@ -1,0 +1,4 @@
+github.com/DependencyTrack/client-go v0.8.0 h1:uAukThoe45xGLtWlIUEzvwMUxg4mDP1EXQC/tWBr55U=
+github.com/DependencyTrack/client-go v0.8.0/go.mod h1:joh0lDVtJfPh6G39kdtAdbtfM9+RPD/82QPeYM3ZtC4=
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
